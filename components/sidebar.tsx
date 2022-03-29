@@ -8,25 +8,7 @@ import {
 } from "@chakra-ui/layout";
 import NextImage from "next/image";
 import NextLink from "next/link";
-import { MdHome, MdLibraryMusic, MdSearch } from "react-icons/md";
-
-const navMenu = [
-  {
-    name: "Home",
-    icon: MdHome,
-    route: "/",
-  },
-  {
-    name: "Search",
-    icon: MdSearch,
-    route: "/search",
-  },
-  {
-    name: "Your Library",
-    icon: MdLibraryMusic,
-    route: "/library",
-  },
-];
+import { navMenu } from "../menus.js";
 
 const Sidebar = () => {
   return (
