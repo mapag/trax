@@ -1,5 +1,7 @@
+import { Box } from "@chakra-ui/layout";
+
 const Home = () => {
-  return <div>Home</div>;
+  return <Box bgColor="gray.900">Home</Box>;
 };
 
 export default Home;

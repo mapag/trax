@@ -36,3 +36,7 @@ export const musicMenu = [
     route: "/favorites",
   },
 ];
+
+export const playlists = new Array(30)
+  .fill(1)
+  .map((_, i) => `Playlist ${i + 1}`);

@@ -1,4 +1,5 @@
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/layout";
 import "reset-css";
 import PlayerLayout from "../components/playerLayout";
 
@@ -33,9 +34,11 @@ const theme = extendTheme({
 const MyApp = ({ Component, pageProps }) => {
   return (
     <ChakraProvider theme={theme}>
-      <PlayerLayout>
-        <Component {...pageProps} />
-      </PlayerLayout>
+      <Box bgColor="gray.900">
+        <PlayerLayout>
+          <Component {...pageProps} />
+        </PlayerLayout>
+      </Box>
     </ChakraProvider>
   );
 };
