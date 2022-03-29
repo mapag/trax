@@ -1,14 +1,7 @@
-import {
-  Box,
-  List,
-  LinkBox,
-  LinkOverlay,
-  ListIcon,
-  ListItem,
-} from "@chakra-ui/layout";
+import { Box, List, Divider } from "@chakra-ui/layout";
 import NextImage from "next/image";
-import NextLink from "next/link";
-import { navMenu } from "../menus.js";
+import { navMenu, musicMenu } from "../menus";
+import MenuItem from "./menuItem";
 
 const Sidebar = () => {
   return (
@@ -23,23 +16,18 @@ const Sidebar = () => {
         <Box width="120px" marginBottom="20px" paddingX="20px">
           <NextImage src="/logo.svg" height={60} width={120} />
         </Box>
-        <Box marginBottom="20px">
+        <Box>
           <List spacing={2}>
             {navMenu.map((menu) => (
-              <ListItem paddingX="20px" fontSize="16px" key={menu.name}>
-                <LinkBox>
-                  <NextLink href={menu.route} passHref>
-                    <LinkOverlay>
-                      <ListIcon
-                        as={menu.icon}
-                        color="white"
-                        marginRight="20px"
-                      />
-                      {menu.name}
-                    </LinkOverlay>
-                  </NextLink>
-                </LinkBox>
-              </ListItem>
+              <MenuItem menu={menu} key={menu.name} />
+            ))}
+          </List>
+        </Box>
+        <Divider marginY="20px" color="gray.800" />
+        <Box marginBottom="20px">
+          <List spacing={2}>
+            {musicMenu.map((menu) => (
+              <MenuItem menu={menu} key={menu.name} />
             ))}
           </List>
         </Box>
