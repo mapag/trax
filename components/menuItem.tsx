@@ -1,7 +1,18 @@
 import { LinkBox, LinkOverlay, ListIcon, ListItem } from "@chakra-ui/layout";
 import NextLink from "next/link";
+import { IconType } from "react-icons";
 
-const MenuItem = ({ menu }) => {
+type Menu = {
+  name: string;
+  icon: IconType;
+  route: string;
+};
+
+type Props = {
+  menu: Menu;
+};
+
+const MenuItem = ({ menu }: Props) => {
   return (
     <ListItem paddingX="20px" fontSize="16px">
       <LinkBox>
